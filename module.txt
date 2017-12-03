@@ -1,0 +1,9 @@
+{
+    "id" : "ChrisWorldGenerator",
+    "version" : "0.1.0-SNAPSHOT",
+    "author" : "Chris Howes",
+    "displayName" : "ChrisWorldGenerator",
+    "description" : "",
+    "dependencies" : [],
+    "serverSideOnly" : false
+}
