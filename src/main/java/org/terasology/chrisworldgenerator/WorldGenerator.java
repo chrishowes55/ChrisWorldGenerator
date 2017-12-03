@@ -16,6 +16,7 @@
 package org.terasology.chrisworldgenerator;
 
 
+import org.terasology.core.world.generator.facetProviders.SeaLevelProvider;
 import org.terasology.engine.SimpleUri;
 import org.terasology.registry.In;
 import org.terasology.world.generation.BaseFacetedWorldGenerator;
@@ -28,12 +29,15 @@ public class WorldGenerator extends BaseFacetedWorldGenerator {
     @In
     private WorldGeneratorPluginLibrary worldGeneratorPluginLibrary;
 
-    public WorldGenerator(SimpleUri uri) {
-        super(uri);
-    }
-
     @Override
     protected WorldBuilder createWorld() {
-        return new WorldBuilder(worldGeneratorPluginLibrary).addRasterizer(new TutorialWorldRasterizer());
+        return new WorldBuilder(worldGeneratorPluginLibrary)
+                .addProvider(new SurfaceProvider())
+                .addProvider(new SeaLevelProvider(0))
+                .addRasterizer(new TutorialWorldRasterizer());
+    }
+
+    public WorldGenerator(SimpleUri uri) {
+        super(uri);
     }
 }

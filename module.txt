@@ -4,6 +4,6 @@
     "author" : "Chris Howes",
     "displayName" : "ChrisWorldGenerator",
     "description" : "",
-    "dependencies" : [],
+    "dependencies" : [{"id": "Core"}],
     "serverSideOnly" : false
 }
